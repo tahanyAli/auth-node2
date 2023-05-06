@@ -28,7 +28,7 @@ const login = async (req, res) => {
       email: email,
     },
   });
-  console.log(decodedValue);
+  console.log(decodedValue, "decoded value");
   if (user) {
     const isSame = await bcrypt.compare(password, user.password);
 

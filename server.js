@@ -14,5 +14,5 @@ app.get('/', (req, res) => {
 });
 app.use(router)
 db.sequelize.sync().then(() => {
-    app.listen(3000, () => console.log('up and running on port 3000'))
+    app.listen(3002, () => console.log('up and running on port 3002'))
 })

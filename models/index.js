@@ -19,5 +19,8 @@ const db = {};
 db.sequelize = sequelize;
 // db.users = userModel;
 db.users = require('./user.model')(sequelize, DataTypes);
+db.news = require('./news.model')(sequelize, DataTypes);
 
+db.users.hasMany(db.news, {foreignKey: 'ownerID', sourceKey: 'id'});
+db.news.belongsTo(db.users, {foreignKey: 'ownerID', sourceKey: 'id'})
 module.exports = db;
